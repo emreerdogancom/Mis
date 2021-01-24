@@ -1,9 +1,0 @@
-C:\Users\Emre\Desktop\Mini Inventory System\src\Mis.Entities\bin\Debug\netstandard2.1\Mis.Entities.deps.json
-C:\Users\Emre\Desktop\Mini Inventory System\src\Mis.Entities\bin\Debug\netstandard2.1\Mis.Entities.dll
-C:\Users\Emre\Desktop\Mini Inventory System\src\Mis.Entities\bin\Debug\netstandard2.1\Mis.Entities.pdb
-C:\Users\Emre\Desktop\Mini Inventory System\src\Mis.Entities\obj\Debug\netstandard2.1\Mis.Entities.AssemblyInfoInputs.cache
-C:\Users\Emre\Desktop\Mini Inventory System\src\Mis.Entities\obj\Debug\netstandard2.1\Mis.Entities.AssemblyInfo.cs
-C:\Users\Emre\Desktop\Mini Inventory System\src\Mis.Entities\obj\Debug\netstandard2.1\Mis.Entities.csproj.CoreCompileInputs.cache
-C:\Users\Emre\Desktop\Mini Inventory System\src\Mis.Entities\obj\Debug\netstandard2.1\Mis.Entities.dll
-C:\Users\Emre\Desktop\Mini Inventory System\src\Mis.Entities\obj\Debug\netstandard2.1\Mis.Entities.pdb
-C:\Users\Emre\Desktop\Mini Inventory System\src\Mis.Entities\obj\Debug\netstandard2.1\Mis.Entities.csprojAssemblyReference.cache
