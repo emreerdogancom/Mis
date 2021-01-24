@@ -1,0 +1,11 @@
+/* 
+	Project		: Mini Inventory System
+	Author		: Emre Erdogan 
+	E-Mail		: emre@emreerdogan.com
+	Description : Test project for Good Company
+	Date		: 24/01/2021
+	Copyright	: The MIT License
+*/
+
+For only Select, Delete, Update, Delete (CRUD) actions. If conditions, logging, caching don't be there!!! because DAL layer should be open for changing (Exp: ado.net or hybernateten, nhybernate)
+

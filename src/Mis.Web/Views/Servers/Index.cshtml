@@ -1,0 +1,46 @@
+﻿@model IEnumerable<Mis.Entities.Concrete.ViewModel.ServerViewModel>
+@{
+    ViewData["Title"] = "Server";
+}
+
+<div class="container row p-0 m-0">
+    <div class="col-6">
+        <h2 class="text-info">@ViewData["Title"] List</h2>
+    </div>
+    <div class="col-3 offset-3">
+        <a asp-action="Insert" asp-controller="Servers" class="btn btn-success form-control text-white">
+            Add New @ViewData["Title"]
+        </a>
+    </div>
+    <div class="col-12 border p-3">
+        <table id="DT_load" class="table table-striped table-bordered" style="width:100%">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Stock (Quantity)</th>
+                    <th>Brand</th>
+                    <th>Processor</th>
+                    <th>Ram Slot</th>
+                    <th>Usb Port</th>
+                    <th>From Factor</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                @foreach (var item in Model)
+                {
+                <tr>
+                    <td>@item.Id</td>
+                    <td>@item.Quantity</td>
+                    <td>@item.BrandName</td>
+                    <td>@item.ProcessorName</td>
+                    <td>@item.RamSlots</td>
+                    <td>@item.UsbPorts</td>
+                    <td>@item.FromFactorName</td>
+                </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+</div>

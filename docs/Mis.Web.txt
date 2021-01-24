@@ -1,0 +1,10 @@
+/* 
+	Project		: Mini Inventory System
+	Author		: Emre Erdogan 
+	E-Mail		: emre@emreerdogan.com
+	Description : Test project for Good Company
+	Date		: 24/01/2021
+	Copyright	: The MIT License
+*/
+
+Public web layer. Api layer can be added

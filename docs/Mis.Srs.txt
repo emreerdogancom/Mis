@@ -1,0 +1,47 @@
+/* 
+	Project		: Mini Inventory System
+	Author		: Emre Erdogan 
+	E-Mail		: emre@emreerdogan.com
+	Description : Test project for Good Company
+	Date		: 24/01/2021
+	Copyright	: The MIT License
+*/
+
+# Software requirements specification from Good Company
+
+Mini Inventory System
+
+Summary
+We would like to evaluate your skills as a Full stack C# developer. Your response to this simple task outlined below should provide a clear indication of your programming style.  We are looking for production quality code. 
+ 
+Task
+Design a computer inventory management system that for MVP will only cater for desktop pc’s and laptops, but in the future will have other computer types like tablets, servers etc.
+
+Provide option to:
+1.	Create a new computer
+2.	List stored computers 
+3.	View individual computer
+
+Computer Type	Properties	
+Desktop Pc	Id	
+	Computer Type (laptop, desktop, server etc),	
+	Processor (e.g. i3, i5, i7)	
+	Brand	
+	Usb Ports (number)	
+	Ram Slots (number)	
+	From Factor (tower, mid-tower etc)	
+	Quantity (number)	
+	…	
+Laptop	Screen Size	
+	…	
+
+Be mindful that other computer types will be added in the future that will have different properties. There will be common properties like Brand, Processor and there will be properties that are specific to a computer type. Think about ways in which you could cater for this. 
+ 
+Requirements and expectations
+•	Proper instructions to run the solution should be provided. 
+•	We are looking for use of latest .net technologies (e.g. .net core), coding patterns, practices and principles.
+•	Frontend frameworks (e.g. Angular/react/vuejs) can be used but HTML/JS/CSS is also fine.
+•	Data may be persisted in any way you like. In memory is sufficient.
+•	Unit/Integration testing.
+•	Please push your code to a repo (e.g. GitHub/bitbucket).
+•	Before you start development, please provide us with a breakdown of the tasks and an ETA.
