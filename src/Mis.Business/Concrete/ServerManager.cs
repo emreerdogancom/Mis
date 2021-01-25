@@ -19,11 +19,10 @@ namespace Mis.Business.Concrete
         }
 
 
+        #region Model
 
         public async Task<IEnumerable<Server>> GetAllAsync(Expression<Func<Server, bool>> filter = null)
         {
-
-
             return await _IServerRepository.GetAllAsync(filter);
         }
 
@@ -36,8 +35,6 @@ namespace Mis.Business.Concrete
 
         public async Task<Server> GetByIdAsync(Expression<Func<Server, bool>> filter)
         {
-
-
             return await _IServerRepository.GetByIdAsync(filter);
         }
 
@@ -72,16 +69,31 @@ namespace Mis.Business.Concrete
             _IServerRepository.Delete(entity);
         }
 
+        #endregion
 
-        public IEnumerable<ServerViewModel> GetAllViewModel(Expression<Func<ServerViewModel, bool>> filter = null)
+
+        #region ViewModel
+
+        public IEnumerable<ServerViewModel> GetAllViewModel(Func<ServerViewModel, bool> filter = null)
         {
-
-           return _IServerRepository.GetAllViewModel();
+            return _IServerRepository.GetAllViewModel();
         }
 
-        //public async Task<IEnumerable<IDesktopViewModel>> GetAllViewModelAsync()
-        //{
-        //    return await _IDesktopRepository.GetAllViewModelAsync();
-        //}
+        public Task<IEnumerable<ServerViewModel>> GetAllViewModelAsync(Func<ServerViewModel, bool> filter = null)
+        {
+            return _IServerRepository.GetAllViewModelAsync();
+        }
+
+        public ServerViewModel GetByIdViewModel(Func<ServerViewModel, bool> filter = null)
+        {
+            return _IServerRepository.GetByIdViewModel();
+        }
+
+        public Task<ServerViewModel> GetByIdViewModelAsync(Func<ServerViewModel, bool> filter = null)
+        {
+            return _IServerRepository.GetByIdViewModelAsync();
+        }
+
+        #endregion
     }
 }

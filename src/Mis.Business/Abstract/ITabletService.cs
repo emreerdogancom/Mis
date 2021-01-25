@@ -1,14 +1,12 @@
 ﻿using Mis.Core.Services;
+using Mis.Core.ViewModel.Base;
 using Mis.Entities.Concrete;
 using Mis.Entities.Concrete.ViewModel;
-using System;
-using System.Collections.Generic;
-using System.Linq.Expressions;
 
 namespace Mis.Business.Abstract
 {
-    public interface ITabletService : IService<Tablet>
+    public interface ITabletService : IService<Tablet>, IViewModelRepository<TabletViewModel>
     {
-        IEnumerable<TabletViewModel> GetAllViewModel(Expression<Func<TabletViewModel, bool>> filter = null);
+
     }
 }

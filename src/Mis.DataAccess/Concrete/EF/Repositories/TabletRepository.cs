@@ -6,18 +6,19 @@ using Mis.Entities.Concrete.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Linq.Expressions;
 using System.Threading.Tasks;
 
 namespace Mis.DataAccess.Concrete.EF.Repositories
 {
     public class TabletRepository : EntityRepository<Tablet, MisDbContext>, ITabletRepository
     {
-        public IEnumerable<TabletViewModel> GetAllViewModel(Expression<Func<TabletViewModel, bool>> filter = null)
+        public IEnumerable<TabletViewModel> GetAllViewModel(Func<TabletViewModel, bool> filter = null)
         {
-            var context = new MisDbContext();
+            IEnumerable<TabletViewModel> result = null;
 
-            var result = (
+            using (var context = new MisDbContext())
+            {
+                result = (
                             from d in context.Set<Tablet>()
 
                             select new TabletViewModel
@@ -32,15 +33,26 @@ namespace Mis.DataAccess.Concrete.EF.Repositories
 
                                 Quantity = d.PCBasedProduct.Product.Quantity
                             }
-                        );
+                        ).ToList();
+            }
 
             return filter == null ?
-                result.ToList() :
-                result.Where(filter).ToList();
+                   result :
+                   result.Where(filter);
 
         }
 
-        public Task<IEnumerable<TabletViewModel>> GetAllViewModelAsync(Expression<Func<TabletViewModel, bool>> filter = null)
+        public Task<IEnumerable<TabletViewModel>> GetAllViewModelAsync(Func<TabletViewModel, bool> filter = null)
+        {
+            throw new NotImplementedException();
+        }
+
+        public TabletViewModel GetByIdViewModel(Func<TabletViewModel, bool> filter = null)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<TabletViewModel> GetByIdViewModelAsync(Func<TabletViewModel, bool> filter = null)
         {
             throw new NotImplementedException();
         }

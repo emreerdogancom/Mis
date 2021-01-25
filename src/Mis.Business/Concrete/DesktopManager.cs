@@ -19,11 +19,10 @@ namespace Mis.Business.Concrete
         }
 
 
+        #region Model
 
         public async Task<IEnumerable<Desktop>> GetAllAsync(Expression<Func<Desktop, bool>> filter = null)
         {
-
-
             return await _IDesktopRepository.GetAllAsync(filter);
         }
 
@@ -36,8 +35,6 @@ namespace Mis.Business.Concrete
 
         public async Task<Desktop> GetByIdAsync(Expression<Func<Desktop, bool>> filter)
         {
-
-
             return await _IDesktopRepository.GetByIdAsync(filter);
         }
 
@@ -72,16 +69,33 @@ namespace Mis.Business.Concrete
             _IDesktopRepository.Delete(entity);
         }
 
+        #endregion
 
-        public IEnumerable<DesktopViewModel> GetAllViewModel(Expression<Func<DesktopViewModel, bool>> filter = null)
+
+        #region ViewModel
+
+        public IEnumerable<DesktopViewModel> GetAllViewModel(Func<DesktopViewModel, bool> filter = null)
         {
-
            return _IDesktopRepository.GetAllViewModel();
         }
 
-        //public async Task<IEnumerable<IDesktopViewModel>> GetAllViewModelAsync()
-        //{
-        //    return await _IDesktopRepository.GetAllViewModelAsync();
-        //}
+        public Task<IEnumerable<DesktopViewModel>> GetAllViewModelAsync(Func<DesktopViewModel, bool> filter = null)
+        {
+            return _IDesktopRepository.GetAllViewModelAsync();
+        }
+
+
+
+        public DesktopViewModel GetByIdViewModel(Func<DesktopViewModel, bool> filter = null)
+        {
+            return _IDesktopRepository.GetByIdViewModel();
+        }
+
+        public Task<DesktopViewModel> GetByIdViewModelAsync(Func<DesktopViewModel, bool> filter = null)
+        {
+            return _IDesktopRepository.GetByIdViewModelAsync();
+        }
+
+        #endregion
     }
 }

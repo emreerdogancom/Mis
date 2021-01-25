@@ -19,11 +19,10 @@ namespace Mis.Business.Concrete
         }
 
 
+        #region Model
 
         public async Task<IEnumerable<Laptop>> GetAllAsync(Expression<Func<Laptop, bool>> filter = null)
         {
-
-
             return await _ILaptopRepository.GetAllAsync(filter);
         }
 
@@ -36,8 +35,6 @@ namespace Mis.Business.Concrete
 
         public async Task<Laptop> GetByIdAsync(Expression<Func<Laptop, bool>> filter)
         {
-
-
             return await _ILaptopRepository.GetByIdAsync(filter);
         }
 
@@ -72,11 +69,32 @@ namespace Mis.Business.Concrete
             _ILaptopRepository.Delete(entity);
         }
 
+        #endregion
 
-        public IEnumerable<LaptopViewModel> GetAllViewModel(Expression<Func<LaptopViewModel, bool>> filter = null)
+
+        #region ViewModel
+
+        public IEnumerable<LaptopViewModel> GetAllViewModel(Func<LaptopViewModel, bool> filter = null)
         {
-
            return _ILaptopRepository.GetAllViewModel();
         }
+
+        public Task<IEnumerable<LaptopViewModel>> GetAllViewModelAsync(Func<LaptopViewModel, bool> filter = null)
+        {
+            return _ILaptopRepository.GetAllViewModelAsync();
+        }
+
+        public LaptopViewModel GetByIdViewModel(Func<LaptopViewModel, bool> filter = null)
+        {
+            return _ILaptopRepository.GetByIdViewModel();
+        }
+
+        public Task<LaptopViewModel> GetByIdViewModelAsync(Func<LaptopViewModel, bool> filter = null)
+        {
+            return _ILaptopRepository.GetByIdViewModelAsync();
+        }
+
+        #endregion
+
     }
 }

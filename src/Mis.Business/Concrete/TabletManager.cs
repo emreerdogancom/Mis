@@ -19,11 +19,10 @@ namespace Mis.Business.Concrete
         }
 
 
+        #region Model
 
         public async Task<IEnumerable<Tablet>> GetAllAsync(Expression<Func<Tablet, bool>> filter = null)
         {
-
-
             return await _ITabletRepository.GetAllAsync(filter);
         }
 
@@ -36,8 +35,6 @@ namespace Mis.Business.Concrete
 
         public async Task<Tablet> GetByIdAsync(Expression<Func<Tablet, bool>> filter)
         {
-
-
             return await _ITabletRepository.GetByIdAsync(filter);
         }
 
@@ -72,11 +69,30 @@ namespace Mis.Business.Concrete
             _ITabletRepository.Delete(entity);
         }
 
+        #endregion
 
-        public IEnumerable<TabletViewModel> GetAllViewModel(Expression<Func<TabletViewModel, bool>> filter = null)
+        #region ViewModel
+
+        public IEnumerable<TabletViewModel> GetAllViewModel(Func<TabletViewModel, bool> filter = null)
         {
-
            return _ITabletRepository.GetAllViewModel();
         }
+
+        public Task<IEnumerable<TabletViewModel>> GetAllViewModelAsync(Func<TabletViewModel, bool> filter = null)
+        {
+            return _ITabletRepository.GetAllViewModelAsync();
+        }
+
+        public TabletViewModel GetByIdViewModel(Func<TabletViewModel, bool> filter = null)
+        {
+            return _ITabletRepository.GetByIdViewModel();
+        }
+
+        public Task<TabletViewModel> GetByIdViewModelAsync(Func<TabletViewModel, bool> filter = null)
+        {
+            return _ITabletRepository.GetByIdViewModelAsync();
+        }
+
+        #endregion
     }
 }

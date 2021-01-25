@@ -1,14 +1,12 @@
 ﻿using Mis.Core.Services;
+using Mis.Core.ViewModel.Base;
 using Mis.Entities.Concrete;
 using Mis.Entities.Concrete.ViewModel;
-using System;
-using System.Collections.Generic;
-using System.Linq.Expressions;
 
 namespace Mis.Business.Abstract
 {
-    public interface ILaptopService : IService<Laptop>
+    public interface ILaptopService : IService<Laptop>, IViewModelRepository<LaptopViewModel>
     {
-        IEnumerable<LaptopViewModel> GetAllViewModel(Expression<Func<LaptopViewModel, bool>> filter = null);
+        
     }
 }
