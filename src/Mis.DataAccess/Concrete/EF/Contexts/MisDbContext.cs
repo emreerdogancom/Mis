@@ -26,7 +26,7 @@ namespace Mis.DataAccess.Concrete.EF.Contexts
             if (!optionsBuilder.IsConfigured)
             {
                 //optionsBuilder.UseInMemoryDatabase("memory");
-                optionsBuilder.UseSqlServer("Server=.;Database=NetCoreTest;Trusted_Connection=True;MultipleActiveResultSets=true");
+                optionsBuilder.UseSqlServer("Server=.; Database=Mis; Trusted_Connection=True; MultipleActiveResultSets=true");
             }
         }
 
