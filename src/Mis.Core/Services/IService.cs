@@ -1,9 +1,5 @@
 ﻿using Mis.Core.Repositories.Base;
 using Mis.Entities.Abstract;
-using System;
-using System.Collections.Generic;
-using System.Linq.Expressions;
-using System.Threading.Tasks;
 
 namespace Mis.Core.Services
 {

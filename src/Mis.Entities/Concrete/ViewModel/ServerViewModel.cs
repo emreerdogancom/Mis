@@ -3,7 +3,7 @@ using System;
 
 namespace Mis.Entities.Concrete.ViewModel
 {
-    public class ServerViewModel : IServerViewModel
+    public class ServerViewModel : IViewModel
     {
         public int Id { get; set; }
 

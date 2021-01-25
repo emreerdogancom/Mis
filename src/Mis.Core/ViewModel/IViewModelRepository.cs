@@ -1,4 +1,4 @@
-﻿using Mis.Entities.Abstract.ViewModel.Base;
+﻿using Mis.Entities.Abstract.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq.Expressions;

@@ -3,7 +3,7 @@ using System;
 
 namespace Mis.Entities.Concrete.ViewModel
 {
-    public class DesktopViewModel: IDesktopViewModel
+    public class DesktopViewModel: IViewModel
     {
         public int Id { get; set; }
 
