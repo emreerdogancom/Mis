@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 namespace Mis.DataAccess.Concrete.EF.Repositories.Base
 {
     /// <summary>
-    /// "There are functions with async. New generic repo can be created for sync"
+    /// "There are functions with sync/async."
     /// </summary>
     /// <typeparam name="TEntity"></typeparam>
     /// <typeparam name="TContext"></typeparam>

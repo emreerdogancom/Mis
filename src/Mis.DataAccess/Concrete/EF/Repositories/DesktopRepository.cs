@@ -20,7 +20,6 @@ namespace Mis.DataAccess.Concrete.EF.Repositories
             {
                 result = (
                              from d in context.Set<Desktop>()
-
                              select new DesktopViewModel
                              {
                                  Id = d.Id,
@@ -38,13 +37,14 @@ namespace Mis.DataAccess.Concrete.EF.Repositories
 
                                  Quantity = d.Computer.PCBasedProduct.Product.Quantity
                              }
-                        ).ToList();
+                        );
+
+                result = filter == null ?
+                result.ToList() :
+                result.Where(filter).ToList();
             }
 
-            return filter == null ? 
-                   result : 
-                   result.Where(filter);
-
+            return result;
         }
 
         public Task<IEnumerable<DesktopViewModel>> GetAllViewModelAsync(Func<DesktopViewModel, bool> filter = null)

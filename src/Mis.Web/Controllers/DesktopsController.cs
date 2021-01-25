@@ -15,15 +15,11 @@ namespace Mis.Web.Controllers
 
         public IActionResult Index()
         {
-
-
             return View(_DesktopService.GetAllViewModel());
         }
 
         public IActionResult Insert()
         {
-
-
             return View();
         }
     }

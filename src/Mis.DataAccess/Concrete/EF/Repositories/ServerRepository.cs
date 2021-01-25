@@ -38,13 +38,14 @@ namespace Mis.DataAccess.Concrete.EF.Repositories
 
                                  Quantity = d.Computer.PCBasedProduct.Product.Quantity
                              }
-                        ).ToList();
+                        );
+
+                result = filter == null ?
+                result.ToList() :
+                result.Where(filter).ToList();
             }
 
-            return filter == null ?
-                   result :
-                   result.Where(filter);
-
+            return result;
         }
 
         public Task<IEnumerable<ServerViewModel>> GetAllViewModelAsync(Func<ServerViewModel, bool> filter = null)
