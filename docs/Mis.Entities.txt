@@ -2,7 +2,7 @@
 	Project		: Mini Inventory System
 	Author		: Emre Erdogan 
 	E-Mail		: emre@emreerdogan.com
-	Description : Test project for Good Company
+	Description : Sample project
 	Date		: 24/01/2021
 	Copyright	: The MIT License
 */

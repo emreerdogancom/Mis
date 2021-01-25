@@ -13,7 +13,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{F911AACC-8
 		docs\Mis.Core.txt = docs\Mis.Core.txt
 		docs\Mis.DataAccess.txt = docs\Mis.DataAccess.txt
 		docs\Mis.Entities.txt = docs\Mis.Entities.txt
-		docs\Mis.Srs.txt = docs\Mis.Srs.txt
 		docs\Mis.Web.txt = docs\Mis.Web.txt
 	EndProjectSection
 EndProject
@@ -29,7 +28,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mis.Web", "src\Mis.Web\Mis.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mis.Api", "src\Mis.Api\Mis.Api.csproj", "{9B0F9860-0AE8-4F54-9718-F72E2DB689D1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mis.UnitTests", "tests\Mis.UnitTests\Mis.UnitTests.csproj", "{92A81310-7C29-47FA-B4CD-625575B08C53}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mis.UnitTests", "tests\Mis.UnitTests\Mis.UnitTests.csproj", "{92A81310-7C29-47FA-B4CD-625575B08C53}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

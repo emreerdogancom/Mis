@@ -7,7 +7,7 @@
 	Copyright	: The MIT License
 */
 
-# Software requirements specification from Good Company
+# Software requirements specification
 
 Mini Inventory System
 
