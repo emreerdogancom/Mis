@@ -5,4 +5,5 @@ _ReSharper.*
 bin
 obj
 packages
+Migrations
 Mini Inventory System.docx
