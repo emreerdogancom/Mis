@@ -74,22 +74,22 @@ namespace Mis.Business.Concrete
 
         #region ViewModel
 
-        public IEnumerable<LaptopViewModel> GetAllViewModel(Func<LaptopViewModel, bool> filter = null)
+        public IEnumerable<LaptopViewModel> GetAllViewModel(Expression<Func<LaptopViewModel, bool>> filter = null)
         {
            return _ILaptopRepository.GetAllViewModel();
         }
 
-        public Task<IEnumerable<LaptopViewModel>> GetAllViewModelAsync(Func<LaptopViewModel, bool> filter = null)
+        public Task<IEnumerable<LaptopViewModel>> GetAllViewModelAsync(Expression<Func<LaptopViewModel, bool>> filter = null)
         {
             return _ILaptopRepository.GetAllViewModelAsync();
         }
 
-        public LaptopViewModel GetByIdViewModel(Func<LaptopViewModel, bool> filter = null)
+        public LaptopViewModel GetByIdViewModel(Expression<Func<LaptopViewModel, bool>> filter = null)
         {
             return _ILaptopRepository.GetByIdViewModel();
         }
 
-        public Task<LaptopViewModel> GetByIdViewModelAsync(Func<LaptopViewModel, bool> filter = null)
+        public Task<LaptopViewModel> GetByIdViewModelAsync(Expression<Func<LaptopViewModel, bool>> filter = null)
         {
             return _ILaptopRepository.GetByIdViewModelAsync();
         }

@@ -1,4 +1,5 @@
-﻿using Mis.Core.Repositories;
+﻿using Microsoft.EntityFrameworkCore;
+using Mis.Core.Repositories;
 using Mis.DataAccess.Concrete.EF.Contexts;
 using Mis.DataAccess.Concrete.EF.Repositories.Base;
 using Mis.Entities.Concrete;
@@ -6,56 +7,71 @@ using Mis.Entities.Concrete.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Threading.Tasks;
 
 namespace Mis.DataAccess.Concrete.EF.Repositories
 {
     public class TabletRepository : EntityRepository<Tablet, MisDbContext>, ITabletRepository
     {
-        public IEnumerable<TabletViewModel> GetAllViewModel(Func<TabletViewModel, bool> filter = null)
+        public IEnumerable<TabletViewModel> GetAllViewModel(Expression<Func<TabletViewModel, bool>> filter = null)
         {
-            IEnumerable<TabletViewModel> result = null;
+            using var context = new MisDbContext();
 
-            using (var context = new MisDbContext())
-            {
-                result = (
-                            from d in context.Set<Tablet>()
-
-                            select new TabletViewModel
-                            {
-                                Id = d.Id,
-
-                                ProcessorId = d.PCBasedProduct.ProcessorId,
-                                ProcessorName = d.PCBasedProduct.Processor.ProcessorName,
-
-                                BrandId = d.PCBasedProduct.Product.BrandId,
-                                BrandName = d.PCBasedProduct.Product.Brand.BrandName,
-
-                                Quantity = d.PCBasedProduct.Product.Quantity
-                            }
-                        );
-
-                result = filter == null ?
-                result.ToList() :
-                result.Where(filter).ToList();
-            }
-
-            return result;
+            return
+                 filter == null ?
+                 preQ(context).ToList() :
+                 preQ(context).Where(filter).ToList();
         }
 
-        public Task<IEnumerable<TabletViewModel>> GetAllViewModelAsync(Func<TabletViewModel, bool> filter = null)
+        public async Task<IEnumerable<TabletViewModel>> GetAllViewModelAsync(Expression<Func<TabletViewModel, bool>> filter = null)
         {
-            throw new NotImplementedException();
+            using var context = new MisDbContext();
+
+            return
+                  filter == null ?
+            await preQ(context).ToListAsync() :
+            await preQ(context).Where(filter).ToListAsync();
         }
 
-        public TabletViewModel GetByIdViewModel(Func<TabletViewModel, bool> filter = null)
+        public TabletViewModel GetByIdViewModel(Expression<Func<TabletViewModel, bool>> filter = null)
         {
-            throw new NotImplementedException();
+            using var context = new MisDbContext();
+
+            return
+                   filter == null ?
+                   preQ(context).SingleOrDefault() :
+                   preQ(context).Where(filter).SingleOrDefault();
         }
 
-        public Task<TabletViewModel> GetByIdViewModelAsync(Func<TabletViewModel, bool> filter = null)
+        public async Task<TabletViewModel> GetByIdViewModelAsync(Expression<Func<TabletViewModel, bool>> filter = null)
         {
-            throw new NotImplementedException();
+            using var context = new MisDbContext();
+
+            return
+                  filter == null ?
+            await preQ(context).SingleOrDefaultAsync() :
+            await preQ(context).Where(filter).SingleOrDefaultAsync();
+        }
+
+
+        IQueryable<TabletViewModel> preQ(DbContext context)
+        {
+            return (
+                    from d in context.Set<Tablet>()
+                    select new TabletViewModel
+                    {
+                        Id = d.Id,
+
+                        ProcessorId = d.PCBasedProduct.ProcessorId,
+                        ProcessorName = d.PCBasedProduct.Processor.ProcessorName,
+
+                        BrandId = d.PCBasedProduct.Product.BrandId,
+                        BrandName = d.PCBasedProduct.Product.Brand.BrandName,
+
+                        Quantity = d.PCBasedProduct.Product.Quantity
+                    }
+                );
         }
     }
 }
