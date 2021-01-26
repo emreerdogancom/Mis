@@ -12,11 +12,11 @@ namespace Mis.Business.Concrete
 {
     public class DesktopService : Service<Desktop>, IDesktopService
     {
-        private readonly IDesktopRepository _IDesktopRepository;
+        private readonly IDesktopRepository _desktopRepository;
 
         public DesktopService(IDesktopRepository rep) : base(rep)
         {
-            _IDesktopRepository = rep;
+            _desktopRepository = rep;
         }
 
         /*
@@ -26,26 +26,26 @@ namespace Mis.Business.Concrete
         public IEnumerable<DesktopViewModel> GetAllViewModel(Expression<Func<DesktopViewModel, bool>> filter = null)
         {
             /* Business Codes Here */
-            return _IDesktopRepository.GetAllViewModel();
+            return _desktopRepository.GetAllViewModel();
         }
 
         public Task<IEnumerable<DesktopViewModel>> GetAllViewModelAsync(Expression<Func<DesktopViewModel, bool>> filter = null)
         {
             /* Business Codes Here */
-            return _IDesktopRepository.GetAllViewModelAsync();
+            return _desktopRepository.GetAllViewModelAsync();
         }
 
 
         public DesktopViewModel GetByIdViewModel(Expression<Func<DesktopViewModel, bool>> filter = null)
         {
             /* Business Codes Here */
-            return _IDesktopRepository.GetByIdViewModel();
+            return _desktopRepository.GetByIdViewModel();
         }
 
         public Task<DesktopViewModel> GetByIdViewModelAsync(Expression<Func<DesktopViewModel, bool>> filter = null)
         {
             /* Business Codes Here */
-            return _IDesktopRepository.GetByIdViewModelAsync();
+            return _desktopRepository.GetByIdViewModelAsync();
         }
 
     }

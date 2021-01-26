@@ -12,11 +12,11 @@ namespace Mis.Business.Concrete
 {
     public class TabletService : Service<Tablet>, ITabletService
     {
-        private ITabletRepository _ITabletRepository;
+        private ITabletRepository _tabletRepository;
 
         public TabletService(ITabletRepository rep) : base(rep)
         {
-            _ITabletRepository = rep;
+            _tabletRepository = rep;
         }
 
         /*
@@ -26,25 +26,25 @@ namespace Mis.Business.Concrete
         public IEnumerable<TabletViewModel> GetAllViewModel(Expression<Func<TabletViewModel, bool>> filter = null)
         {
            /* Business Codes Here */
-           return _ITabletRepository.GetAllViewModel();
+           return _tabletRepository.GetAllViewModel();
         }
 
         public Task<IEnumerable<TabletViewModel>> GetAllViewModelAsync(Expression<Func<TabletViewModel, bool>> filter = null)
         {
             /* Business Codes Here */
-            return _ITabletRepository.GetAllViewModelAsync();
+            return _tabletRepository.GetAllViewModelAsync();
         }
 
         public TabletViewModel GetByIdViewModel(Expression<Func<TabletViewModel, bool>> filter = null)
         {
             /* Business Codes Here */
-            return _ITabletRepository.GetByIdViewModel();
+            return _tabletRepository.GetByIdViewModel();
         }
 
         public Task<TabletViewModel> GetByIdViewModelAsync(Expression<Func<TabletViewModel, bool>> filter = null)
         {
             /* Business Codes Here */
-            return _ITabletRepository.GetByIdViewModelAsync();
+            return _tabletRepository.GetByIdViewModelAsync();
         }
     }
 }

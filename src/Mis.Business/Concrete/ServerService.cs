@@ -12,11 +12,11 @@ namespace Mis.Business.Concrete
 {
     public class ServerService : Service<Server>, IServerService
     {
-        private IServerRepository _IServerRepository;
+        private IServerRepository _serverRepository;
 
         public ServerService(IServerRepository rep) : base(rep)
         {
-            _IServerRepository = rep;
+            _serverRepository = rep;
         }
 
         /*
@@ -26,25 +26,25 @@ namespace Mis.Business.Concrete
         public IEnumerable<ServerViewModel> GetAllViewModel(Expression<Func<ServerViewModel, bool>> filter = null)
         {
             /* Business Codes Here */
-            return _IServerRepository.GetAllViewModel();
+            return _serverRepository.GetAllViewModel();
         }
 
         public Task<IEnumerable<ServerViewModel>> GetAllViewModelAsync(Expression<Func<ServerViewModel, bool>> filter = null)
         {
             /* Business Codes Here */
-            return _IServerRepository.GetAllViewModelAsync();
+            return _serverRepository.GetAllViewModelAsync();
         }
 
         public ServerViewModel GetByIdViewModel(Expression<Func<ServerViewModel, bool>> filter = null)
         {
             /* Business Codes Here */
-            return _IServerRepository.GetByIdViewModel();
+            return _serverRepository.GetByIdViewModel();
         }
 
         public Task<ServerViewModel> GetByIdViewModelAsync(Expression<Func<ServerViewModel, bool>> filter = null)
         {
             /* Business Codes Here */
-            return _IServerRepository.GetByIdViewModelAsync();
+            return _serverRepository.GetByIdViewModelAsync();
         }
     }
 }

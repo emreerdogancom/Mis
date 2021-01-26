@@ -12,11 +12,11 @@ namespace Mis.Business.Concrete
 {
     public class LaptopService : Service<Laptop>, ILaptopService
     {
-        private ILaptopRepository _ILaptopRepository;
+        private ILaptopRepository _laptopRepository;
 
         public LaptopService(ILaptopRepository rep) : base(rep)
         {
-            _ILaptopRepository = rep;
+            _laptopRepository = rep;
         }
 
         /*
@@ -26,25 +26,25 @@ namespace Mis.Business.Concrete
         public IEnumerable<LaptopViewModel> GetAllViewModel(Expression<Func<LaptopViewModel, bool>> filter = null)
         {
             /* Business Codes Here */
-            return _ILaptopRepository.GetAllViewModel();
+            return _laptopRepository.GetAllViewModel();
         }
 
         public Task<IEnumerable<LaptopViewModel>> GetAllViewModelAsync(Expression<Func<LaptopViewModel, bool>> filter = null)
         {
             /* Business Codes Here */
-            return _ILaptopRepository.GetAllViewModelAsync();
+            return _laptopRepository.GetAllViewModelAsync();
         }
 
         public LaptopViewModel GetByIdViewModel(Expression<Func<LaptopViewModel, bool>> filter = null)
         {
             /* Business Codes Here */
-            return _ILaptopRepository.GetByIdViewModel();
+            return _laptopRepository.GetByIdViewModel();
         }
 
         public Task<LaptopViewModel> GetByIdViewModelAsync(Expression<Func<LaptopViewModel, bool>> filter = null)
         {
             /* Business Codes Here */
-            return _ILaptopRepository.GetByIdViewModelAsync();
+            return _laptopRepository.GetByIdViewModelAsync();
         }
     }
 }

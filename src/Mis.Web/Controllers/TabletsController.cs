@@ -5,17 +5,17 @@ namespace Mis.Web.Controllers
 {
     public class TabletsController : Controller
     {
-        private ITabletService _TabletService;
+        private ITabletService _tabletService;
 
-        public TabletsController(ITabletService TabletService)
+        public TabletsController(ITabletService Service)
         {
-            _TabletService = TabletService;
+            _tabletService = Service;
         }
 
 
         public IActionResult Index()
         {
-            return View(_TabletService.GetAllViewModel());
+            return View(_tabletService.GetAllViewModel());
         }
 
         public IActionResult Insert()

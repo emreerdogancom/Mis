@@ -5,16 +5,16 @@ namespace Mis.Web.Controllers
 {
     public class LaptopsController : Controller
     {
-        private ILaptopService _LaptopService;
+        private ILaptopService _laptopService;
 
-        public LaptopsController(ILaptopService LaptopService)
+        public LaptopsController(ILaptopService Service)
         {
-            _LaptopService = LaptopService;
+            _laptopService = Service;
         }
 
         public IActionResult Index()
         {
-            return View(_LaptopService.GetAllViewModel());
+            return View(_laptopService.GetAllViewModel());
         }
 
         public IActionResult Insert()

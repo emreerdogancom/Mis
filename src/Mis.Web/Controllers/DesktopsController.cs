@@ -6,11 +6,11 @@ namespace Mis.Web.Controllers
 {
     public class DesktopsController : Controller
     {
-        private IDesktopService _DesktopService;
+        private IDesktopService _desktopService;
 
-        public DesktopsController(IDesktopService DesktopService)
+        public DesktopsController(IDesktopService Service)
         {
-            _DesktopService = DesktopService;
+            _desktopService = Service;
         }
 
 
@@ -18,7 +18,7 @@ namespace Mis.Web.Controllers
         {
             //_DesktopService.Insert(new Desktop() { Id = 1 });
 
-            return View(_DesktopService.GetAllViewModel());
+            return View(_desktopService.GetAllViewModel());
         }
 
         public IActionResult Insert()

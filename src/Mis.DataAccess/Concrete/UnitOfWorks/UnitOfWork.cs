@@ -18,44 +18,44 @@ namespace Mis.DataAccess.Concrete.UnitOfWorks
             _context = Context;
         }
 
-        private BrandRepository _BrandRepository;
-        public IBrandRepository Brands => _BrandRepository ??= new BrandRepository();
+        private BrandRepository _brandRepository;
+        public IBrandRepository Brands => _brandRepository ??= new BrandRepository();
 
 
-        private ComputerRepository _ComputerRepository;
-        public IComputerRepository Computers => _ComputerRepository ??= new ComputerRepository();
+        private ComputerRepository _computerRepository;
+        public IComputerRepository Computers => _computerRepository ??= new ComputerRepository();
 
 
-        private DesktopRepository _DesktopRepository;
-        public IDesktopRepository Desktops => _DesktopRepository ??= new DesktopRepository();
+        private DesktopRepository _desktopRepository;
+        public IDesktopRepository Desktops => _desktopRepository ??= new DesktopRepository();
 
 
-        private FromFactorRepository _FromFactorRepository;
-        public IFromFactorRepository FromFactors => _FromFactorRepository ??= new FromFactorRepository();
+        private FromFactorRepository _fromFactorRepository;
+        public IFromFactorRepository FromFactors => _fromFactorRepository ??= new FromFactorRepository();
 
 
-        private LaptopRepository _LaptopRepository;
-        public ILaptopRepository Laptops => _LaptopRepository ??= new LaptopRepository();
+        private LaptopRepository _laptopRepository;
+        public ILaptopRepository Laptops => _laptopRepository ??= new LaptopRepository();
 
 
-        private PCBasedProductRepository _IPCBasedProductRepository;
-        public IPCBasedProductRepository PCBasedProducs => _IPCBasedProductRepository ??= new PCBasedProductRepository();
+        private PCBasedProductRepository _pcBasedProductRepository;
+        public IPCBasedProductRepository PCBasedProducs => _pcBasedProductRepository ??= new PCBasedProductRepository();
 
 
-        private ProcessorRepository _ProcessorRepository;
-        public IProcessorRepository Processors => _ProcessorRepository ??= new ProcessorRepository();
+        private ProcessorRepository _processorRepository;
+        public IProcessorRepository Processors => _processorRepository ??= new ProcessorRepository();
 
 
-        private ProductRepository _ProductRepository;
-        public IProductRepository Products => _ProductRepository ??= new ProductRepository();
+        private ProductRepository _productRepository;
+        public IProductRepository Products => _productRepository ??= new ProductRepository();
 
 
-        private ServerRepository _ServerRepository;
-        public IServerRepository Servers => _ServerRepository ??= new ServerRepository();
+        private ServerRepository _serverRepository;
+        public IServerRepository Servers => _serverRepository ??= new ServerRepository();
 
 
-        private TabletRepository _TabletRepository;
-        public ITabletRepository Tablets => _TabletRepository ??= new TabletRepository();
+        private TabletRepository _tabletRepository;
+        public ITabletRepository Tablets => _tabletRepository ??= new TabletRepository();
 
 
 

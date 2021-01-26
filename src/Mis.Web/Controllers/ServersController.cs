@@ -5,17 +5,17 @@ namespace Mis.Web.Controllers
 {
     public class ServersController : Controller
     {
-        private IServerService _ServerService;
+        private IServerService _serverService;
 
-        public ServersController(IServerService ServerService)
+        public ServersController(IServerService Service)
         {
-            _ServerService = ServerService;
+            _serverService = Service;
         }
 
 
         public IActionResult Index()
         {
-            return View(_ServerService.GetAllViewModel());
+            return View(_serverService.GetAllViewModel());
         }
 
         public IActionResult Insert()
