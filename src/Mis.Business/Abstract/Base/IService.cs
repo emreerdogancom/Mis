@@ -1,7 +1,7 @@
-﻿using Mis.Core.Repositories.Base;
+﻿using Mis.Core.Repositories.Entity.Base;
 using Mis.Entities.Abstract;
 
-namespace Mis.Core.Services
+namespace Mis.Business.Abstract.Base
 {
 
     public interface IService<T> : IEntityRepository<T> where T : class, IEntity, new()

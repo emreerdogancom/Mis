@@ -1,4 +1,4 @@
-﻿using Mis.Core.Repositories;
+﻿using Mis.Core.Repositories.Entity;
 using System.Threading.Tasks;
 
 namespace Mis.Core.UnitOfWorks
@@ -16,6 +16,8 @@ namespace Mis.Core.UnitOfWorks
         IServerRepository Servers { get; }
         ITabletRepository Tablets { get; }
 
-        Task Commit();
+        void Commit();
+
+        Task CommitAsync();
     }
 }

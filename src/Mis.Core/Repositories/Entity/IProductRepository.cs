@@ -1,7 +1,7 @@
-﻿using Mis.Core.Repositories.Base;
+﻿using Mis.Core.Repositories.Entity.Base;
 using Mis.Entities.Concrete;
 
-namespace Mis.Core.Repositories
+namespace Mis.Core.Repositories.Entity
 {
     public interface IProductRepository : IEntityRepository<Product>
     {

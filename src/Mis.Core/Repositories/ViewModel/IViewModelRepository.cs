@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
 
-namespace Mis.Core.ViewModel.Base
+namespace Mis.Core.Repositories.ViewModel
 {
     public interface IViewModelRepository<TViewModel>
         where TViewModel : class, IViewModel, new()

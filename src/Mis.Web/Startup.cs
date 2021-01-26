@@ -5,9 +5,11 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Mis.Business.Abstract;
 using Mis.Business.Concrete;
-using Mis.Core.Repositories;
+using Mis.Core.Repositories.Entity;
+using Mis.Core.UnitOfWorks;
 using Mis.DataAccess.Concrete.EF.Contexts;
 using Mis.DataAccess.Concrete.EF.Repositories;
+using Mis.DataAccess.Concrete.UnitOfWorks;
 
 namespace Mis.Web
 {
@@ -43,11 +45,13 @@ namespace Mis.Web
 
 
             /* Services */
-            services.AddScoped<IDesktopService, DesktopManager>();
-            services.AddScoped<IServerService, ServerManager>();
-            services.AddScoped<ILaptopService, LaptopManager>();
-            services.AddScoped<ITabletService, TabletManager>();
+            services.AddScoped<IDesktopService, DesktopService>();
+            services.AddScoped<IServerService, ServerService>();
+            services.AddScoped<ILaptopService, LaptopService>();
+            services.AddScoped<ITabletService, TabletService>();
 
+            /* Unit Of Works */
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
 
             /* Database */
             services.AddDbContext<MisDbContext>();

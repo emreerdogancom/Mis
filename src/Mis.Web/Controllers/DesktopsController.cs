@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Mis.Business.Abstract;
+using Mis.Entities.Concrete;
 
 namespace Mis.Web.Controllers
 {
@@ -15,6 +16,8 @@ namespace Mis.Web.Controllers
 
         public IActionResult Index()
         {
+            //_DesktopService.Insert(new Desktop() { Id = 1 });
+
             return View(_DesktopService.GetAllViewModel());
         }
 

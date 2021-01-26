@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
 
-namespace Mis.Core.Repositories.Base
+namespace Mis.Core.Repositories.Entity.Base
 {
     public interface IEntityRepository<T> where T : class, IEntity, new()
     {

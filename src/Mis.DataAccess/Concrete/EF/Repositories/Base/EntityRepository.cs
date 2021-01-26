@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Mis.Core.Repositories.Base;
+using Mis.Core.Repositories.Entity.Base;
 using Mis.Entities.Abstract;
 using System;
 using System.Collections.Generic;
@@ -18,9 +18,13 @@ namespace Mis.DataAccess.Concrete.EF.Repositories.Base
         where TEntity : class, IEntity, new()
         where TContext : DbContext, new()
     {
+        //protected readonly DbContext _context;
+        //private readonly DbSet<TEntity> _dbSet;
+
         public EntityRepository()
         {
-
+            //_context = new TContext();
+            //_dbSet = _context.Set<TEntity>();
         }
 
         public virtual async Task<IEnumerable<TEntity>> GetAllAsync(Expression<Func<TEntity, bool>> filter = null)
